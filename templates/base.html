@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}AI Resume Analyzer{% endblock %}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>ResumeAI</h2>
+
+    <a href="/">🏠 Dashboard</a>
+    <a href="#">📤 Upload Resume</a>
+    <a href="#">📜 History</a>
+    <a href="#">📄 Reports</a>
+    <a href="#">⚙ Settings</a>
+
+</div>
+
+<div class="main-content">
+
+{% block content %}
+
+{% endblock %}
+
+</div>
+
+</body>
+</html>
