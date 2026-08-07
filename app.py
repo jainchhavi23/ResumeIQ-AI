@@ -10,7 +10,6 @@ app.config.from_object(Config)
 
 db.init_app(app)
 
-# Register Blueprint AFTER creating app
 app.register_blueprint(upload)
 
 @app.route("/")
