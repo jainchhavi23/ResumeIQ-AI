@@ -99,7 +99,7 @@ Generate AI Feedback
 Display Results on the Dashboard
 ```
 
-## 📊 Analysis Output
+## Analysis Output
 
 ResumeIQ AI will provide:
 
@@ -112,7 +112,7 @@ ResumeIQ AI will provide:
 * Resume Health Check
 * Personalized AI Suggestions
 
-##  Project Structure
+## Project Structure
 
 ```text
 ResumeIQ-AI/
@@ -163,7 +163,7 @@ ResumeIQ-AI/
 └── uploads/
 ```
 
-##  Installation
+## Installation
 
 ### 1. Clone the repository
 
@@ -272,6 +272,6 @@ Users should only add skills, experience, achievements, and qualifications that 
 Chhavi Jain
 jchhavi2317@gmail.com
 
-## 📄 License
+## License
 
 This project is currently created for educational and portfolio purposes.
