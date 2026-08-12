@@ -270,6 +270,7 @@ Users should only add skills, experience, achievements, and qualifications that 
 ## Author
 
 Chhavi Jain
+
 jchhavi2317@gmail.com
 
 ## License
