@@ -1,62 +1,224 @@
 {% extends "base.html" %}
 
+{% block title %}Dashboard - ResumeIQ AI{% endblock %}
+
 {% block content %}
 
-<div class="top-bar">
-    <h1>Welcome, User </h1>
-    <p>Upload your resume and receive AI-powered analysis.</p>
-</div>
+<div class="dashboard-layout">
 
-<div class="cards">
+    <!-- Sidebar -->
+    <aside class="sidebar">
 
-    <div class="card">
-        <h3>ATS Score</h3>
-        <span>92%</span>
-    </div>
+        <div class="brand">
+            <div class="brand-icon">✦</div>
+            <span>ResumeIQ AI</span>
+        </div>
 
-    <div class="card">
-        <h3>Skills Found</h3>
-        <span>18</span>
-    </div>
+        <nav class="sidebar-nav">
 
-    <div class="card">
-        <h3>Missing Skills</h3>
-        <span>5</span>
-    </div>
+            <a href="/" class="nav-item active">
+                <span>⌂</span>
+                <span>Dashboard</span>
+            </a>
 
-    <div class="card">
-        <h3>Resumes</h3>
-        <span>7</span>
-    </div>
+            <a href="/upload" class="nav-item">
+                <span>⌕</span>
+                <span>Analyze Resume</span>
+            </a>
 
-</div>
+            <a href="#" class="nav-item">
+                <span>▣</span>
+                <span>Job Description Match</span>
+            </a>
 
-<div class="upload-section">
+            <a href="#" class="nav-item">
+                <span>◷</span>
+                <span>History</span>
+            </a>
 
-    <div class="upload-area">
+            <a href="#" class="nav-item">
+                <span>▤</span>
+                <span>Reports</span>
+            </a>
 
-        <h2> Upload Resume</h2>
+            <a href="#" class="nav-item">
+                <span>♙</span>
+                <span>Profile</span>
+            </a>
 
-        <p>Drag & Drop your PDF here</p>
+            <a href="#" class="nav-item">
+                <span>⚙</span>
+                <span>Settings</span>
+            </a>
 
-        <button>Choose Resume</button>
+        </nav>
 
-    </div>
+        <div class="logout">
+            <span>↪</span>
+            <span>Log out</span>
+        </div>
 
-</div>
+    </aside>
 
-<div class="bottom-grid">
 
-    <div class="large-card">
-        <h2>AI Feedback</h2>
-        <p>AI suggestions will appear here.</p>
-    </div>
+    <!-- Main Content -->
+    <main class="main-content">
 
-    <div class="large-card">
-        <h2>Recent Analysis</h2>
-        <p>No resume analyzed yet.</p>
-    </div>
+        <!-- Top Bar -->
+        <header class="topbar">
+
+            <div></div>
+
+            <div class="topbar-right">
+                <button class="theme-btn">☾</button>
+
+                <div class="profile-circle">
+                    U
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- Hero -->
+        <section class="hero-section">
+
+            <h1>
+                Analyze Your
+                <span>Resume with AI</span>
+            </h1>
+
+            <p>
+                Get ATS insights, skills analysis, missing keywords and
+                AI-powered suggestions to improve your resume.
+            </p>
+
+        </section>
+
+
+        <!-- Upload Section -->
+        <section class="upload-section">
+
+            <div class="upload-card">
+
+                <div class="upload-icon">
+                    ↑
+                </div>
+
+                <h2>Upload Your Resume</h2>
+
+                <p class="upload-text">
+                    Drag & drop your resume here
+                </p>
+
+                <p class="or-text">
+                    or
+                </p>
+
+
+                <form action="/analyze"
+                      method="POST"
+                      enctype="multipart/form-data">
+
+                    <label for="resume" class="choose-btn">
+                        Choose File
+                    </label>
+
+                    <input
+                        type="file"
+                        id="resume"
+                        name="resume"
+                        accept=".pdf"
+                        hidden
+                    >
+
+                    <p id="file-name" class="file-name">
+                        No file selected
+                    </p>
+
+                    <button type="submit" class="analyze-btn">
+                        Analyze Resume
+                    </button>
+
+                </form>
+
+                <small>
+                    PDF only • Maximum 5MB
+                </small>
+
+            </div>
+
+        </section>
+
+
+        <!-- Feature Cards -->
+        <section class="features">
+
+            <div class="feature-card">
+
+                <div class="feature-icon green">
+                    ✦
+                </div>
+
+                <h3>AI-Powered Analysis</h3>
+
+                <p>
+                    Get AI-driven insights and personalized
+                    improvement suggestions.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon blue">
+                    ◈
+                </div>
+
+                <h3>ATS Score</h3>
+
+                <p>
+                    Check how well your resume performs
+                    against job requirements.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon orange">
+                    ◉
+                </div>
+
+                <h3>Detailed Report</h3>
+
+                <p>
+                    View detailed analysis and track your
+                    resume improvement.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
 
 </div>
 
 {% endblock %}
+<script>
+const resumeInput = document.getElementById("resume");
+const fileName = document.getElementById("file-name");
+
+resumeInput.addEventListener("change", function () {
+
+    if (this.files.length > 0) {
+        fileName.textContent = this.files[0].name;
+    } else {
+        fileName.textContent = "No file selected";
+    }
+
+});
+</script>
