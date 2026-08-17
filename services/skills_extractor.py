@@ -1,9 +1,8 @@
 import re
 
 
-# Skills that ResumeIQ can currently recognize
 SKILLS_DATABASE = [
-    # Programming Languages
+    # Programming
     "python",
     "java",
     "c++",
@@ -12,7 +11,7 @@ SKILLS_DATABASE = [
     "typescript",
     "sql",
 
-    # Web Development
+    # Web
     "html",
     "html5",
     "css",
@@ -36,7 +35,7 @@ SKILLS_DATABASE = [
     "generative ai",
     "nlp",
 
-    # Databases
+    # Database
     "mysql",
     "postgresql",
     "sqlite",
@@ -63,7 +62,7 @@ SKILLS_DATABASE = [
 
 def extract_skills(text):
     """
-    Find known skills inside resume text.
+    Extract known skills from resume text.
     """
 
     text_lower = text.lower()
@@ -72,7 +71,6 @@ def extract_skills(text):
 
     for skill in SKILLS_DATABASE:
 
-        # Escape special characters such as C++
         pattern = r"(?<!\w)" + re.escape(skill) + r"(?!\w)"
 
         if re.search(pattern, text_lower):
