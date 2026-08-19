@@ -560,3 +560,22 @@ body {
     color: #cbd5e1;
     line-height: 1.5;
 }
+.section-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.section-found {
+    background: #064e3b;
+    color: #6ee7b7;
+}
+
+.section-missing {
+    background: #450a0a;
+    color: #fca5a5;
+}

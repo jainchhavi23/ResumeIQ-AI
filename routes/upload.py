@@ -8,6 +8,7 @@ from services.skills_extractor import extract_skills
 from services.jd_analyzer import extract_jd_skills
 from services.ats_scorer import calculate_ats_score
 from services.suggestions import generate_suggestions
+from services.section_analyzer import analyze_sections
 
 
 upload = Blueprint("upload", __name__)
@@ -83,7 +84,24 @@ def analyze():
     # ---------------------------------------
 
     resume_data = parse_resume(cleaned_text)
+sections = analyze_sections(cleaned_text)
+section_html = ""
 
+for section, found in sections.items():
+
+    if found:
+        status = "✓"
+        class_name = "section-found"
+    else:
+        status = "✗"
+        class_name = "section-missing"
+
+    section_html += f"""
+    <div class="section-item {class_name}">
+        <span>{status}</span>
+        <span>{section}</span>
+    </div>
+    """
     # ---------------------------------------
     # 9. Extract resume skills
     # ---------------------------------------
@@ -574,7 +592,19 @@ def analyze():
 
             </div>
 
+<div class="card">
 
+    <h2>
+        Resume Section Analysis
+    </h2>
+
+    <p style="color:#94a3b8; margin-bottom:20px;">
+        Important sections detected in your resume
+    </p>
+
+    {section_html}
+
+</div>
             <!-- Job Match Analysis -->
 
             <div class="card">
