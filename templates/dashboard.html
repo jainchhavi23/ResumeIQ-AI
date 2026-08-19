@@ -135,6 +135,28 @@
                     <p id="file-name" class="file-name">
                         No file selected
                     </p>
+                    <form action="/analyze"
+      method="POST"
+      enctype="multipart/form-data">
+
+
+    <div class="jd-section">
+
+        <label for="job_description">
+            Job Description
+        </label>
+
+        <textarea
+            id="job_description"
+            name="job_description"
+            placeholder="Paste the job description here..."
+            rows="10"
+            required
+        ></textarea>
+
+    </div>
+
+
 
                     <button type="submit" class="analyze-btn">
                         Analyze Resume
@@ -147,6 +169,7 @@
                 </small>
 
             </div>
+
 
         </section>
 
