@@ -623,7 +623,7 @@ for section, found in sections.items():
 
                 <div class="progress-container">
                     <div class="progress-bar"></div>
-                </div>
+            </div>
 
 
                 <div class="skill-section">
